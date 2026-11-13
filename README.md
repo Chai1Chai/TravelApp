@@ -23,6 +23,9 @@
 - Телефон: включите отладку по USB и выполните
   `adb install app/build/outputs/apk/debug/app-debug.apk`
 
+## Готовый apk
+Скачать: https://github.com/Chai1Chai/TravelApp/releases/latest
+
 ## Экраны
 Вход, регистрация, главная, города, Пхукет, отели, рестораны, пляжи,
 развлечения, избранное, личный кабинет, планирование (3 шага),
