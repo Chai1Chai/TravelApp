@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CitiesActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_login"
+        android:importantForAccessibility="no" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="88dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_logo"
+                android:importantForAccessibility="no" />
+
+            <!-- Заголовок -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_outline_white"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/buyan_bold"
+                    android:text="@string/cities_title"
+                    android:textColor="#4FD1D9"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/gilroy_medium_0"
+                    android:text="@string/cities_sub"
+                    android:textColor="#6FA8E8"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Ряд 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:orientation="horizontal">
+
+                <!-- Пхукет -->
+                <FrameLayout
+                    android:id="@+id/cardPhuket"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/phuket"
+                        app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/bg_glass"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="6dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_card_pin"
+                            android:importantForAccessibility="no" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/city_phuket"
+                                android:textColor="#F3F58A"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/country_thailand"
+                                android:textColor="#FFFFFF"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Бали -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bali"
+                        app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/bg_glass"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="6dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_card_pin"
+                            android:importantForAccessibility="no" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/city_bali"
+                                android:textColor="#F3F58A"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/country_indonesia"
+                                android:textColor="#FFFFFF"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Анталия -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/antalia"
+                        app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/bg_glass"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="6dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_card_pin"
+                            android:importantForAccessibility="no" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/city_antalya"
+                                android:textColor="#F3F58A"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/country_turkey"
+                                android:textColor="#FFFFFF"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- Ряд 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Шанхай -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/shanhai_sign_2"
+                        app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/bg_glass"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="6dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_card_pin"
+                            android:importantForAccessibility="no" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/city_shanghai"
+                                android:textColor="#F3F58A"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/country_china"
+                                android:textColor="#FFFFFF"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Нячанг -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/europe_sign_3"
+                        app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/bg_glass"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="6dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_card_pin"
+                            android:importantForAccessibility="no" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/city_nhatrang"
+                                android:textColor="#F3F58A"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/country_vietnam"
+                                android:textColor="#FFFFFF"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <!-- Хургада -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/egypt_sign_1"
+                        app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/bg_glass"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="6dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_card_pin"
+                            android:importantForAccessibility="no" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/city_hurghada"
+                                android:textColor="#F3F58A"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/gropled"
+                                android:text="@string/country_egypt"
+                                android:textColor="#FFFFFF"
+                                android:textSize="9sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/layout_bottom_nav_map"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

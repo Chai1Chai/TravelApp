@@ -1,0 +1,982 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CityPhuketActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_login"
+        android:importantForAccessibility="no" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="88dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Назад + логотип -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:background="@drawable/bg_chip"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_arrow"
+                    app:tint="#FFFFFF"
+                    android:importantForAccessibility="no" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_logo"
+                    android:importantForAccessibility="no" />
+            </FrameLayout>
+
+            <!-- Плашка погоды -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_weather"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gropled"
+                            android:text="@string/weather_city"
+                            android:textColor="#3F4B5E"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/gropled"
+                            android:text="@string/weather_country"
+                            android:textColor="#6B7A90"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/gropled"
+                            android:text="@string/weather_state"
+                            android:textColor="#4A586C"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/gropled"
+                        android:text="@string/weather_temp"
+                        android:textColor="#3F4B5E"
+                        android:textSize="38sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="4dp"
+                        android:src="@drawable/ic_sun"
+                        android:importantForAccessibility="no" />
+                </LinearLayout>
+
+                <!-- Feels like / Humidity / Wind -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_weather_bottom"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:src="@drawable/ic_tempechure"
+                            android:importantForAccessibility="no" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/WeatherLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weather_feels_label" />
+
+                            <TextView
+                                style="@style/WeatherValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weather_feels_value" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:src="@drawable/ic_drop"
+                            android:importantForAccessibility="no" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/WeatherLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weather_humidity_label" />
+
+                            <TextView
+                                style="@style/WeatherValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weather_humidity_value" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:src="@drawable/ic_wind"
+                            android:importantForAccessibility="no" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/WeatherLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weather_wind_label" />
+
+                            <TextView
+                                style="@style/WeatherValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weather_wind_value" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Кнопки-фильтры -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chipHotels"
+                    style="@style/Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chip_hotels" />
+
+                <TextView
+                    android:id="@+id/chipBeaches"
+                    style="@style/Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/chip_beaches" />
+
+                <TextView
+                    android:id="@+id/chipRestaurants"
+                    style="@style/Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/chip_restaurants" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/chipEntertainment"
+                style="@style/Chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/chip_entertainment" />
+
+            <!-- ===== Главные достопримечательности ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/SectionTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sec_main_sights" />
+
+                <TextView
+                    style="@style/SectionAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/restoraunt_1"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/place_dinner_sky" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/restoraunt_2"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/place_blanket" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/restoraunt_3"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/place_siam" />
+                    </FrameLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="4dp"
+                    android:background="@drawable/bg_dot_active" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_dot" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_dot" />
+            </LinearLayout>
+
+            <!-- ===== Где поесть ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/SectionTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sec_where_eat" />
+
+                <TextView
+                    style="@style/SectionAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/restoraunt_1"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/place_dinner_sky" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/restoraunt_2"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/place_blanket" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/restoraunt_3"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/place_siam" />
+                    </FrameLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="4dp"
+                    android:background="@drawable/bg_dot_active" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_dot" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_dot" />
+            </LinearLayout>
+
+            <!-- ===== Отели ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/SectionTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sec_hotels" />
+
+                <TextView
+                    style="@style/SectionAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/hotel_1"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/hotel_movenpick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/hotel_2"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/hotel_royal" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/hotel_3"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/hotel_seascape" />
+                    </FrameLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="4dp"
+                    android:background="@drawable/bg_dot_active" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_dot" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_dot" />
+            </LinearLayout>
+
+            <!-- ===== Пляжи ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/SectionTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sec_beaches" />
+
+                <TextView
+                    style="@style/SectionAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/beach01"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/beach_paradise" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/beach02"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/beach_freedom" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="100dp"
+                        android:layout_height="115dp"
+                        android:layout_marginEnd="8dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/beach03"
+                            app:shapeAppearanceOverlay="@style/RoundedImage24" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_gravity="bottom"
+                            android:background="@drawable/bg_card_shade" />
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="6dp"
+                            android:background="@drawable/bg_heart_circle"
+                            android:padding="5dp"
+                            android:src="@drawable/ic_heart"
+                            app:tint="#4FD1D9"
+                            android:importantForAccessibility="no" />
+
+                        <TextView
+                            style="@style/CardTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="8dp"
+                            android:text="@string/beach_surin" />
+                    </FrameLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="4dp"
+                    android:background="@drawable/bg_dot_active" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_dot" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_dot" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/layout_bottom_nav_map"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

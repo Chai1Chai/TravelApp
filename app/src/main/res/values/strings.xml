@@ -1,0 +1,203 @@
+<resources>
+    <string name="app_name">TravelApp</string>
+    <string name="login_title">Вход</string>
+    <string name="hint_email">email</string>
+    <string name="hint_password">пароль</string>
+    <string name="btn_login">ВОЙТИ</string>
+    <string name="no_account">Нет аккаунта? Зарегистрироваться</string>
+
+    <string name="register_title">Регистрация</string>
+    <string name="hint_name">имя</string>
+    <string name="btn_register">СОЗДАТЬ АККАУНТ</string>
+    <string name="have_account">Есть аккаунт? <b>Войти</b></string>
+
+    <string name="hello_user">Привет, Мария!</string>
+    <string name="ready_text">Готовы к новым открытиям?</string>
+    <string name="where_to">Куда отправимся?</string>
+    <string name="all_cities">все города</string>
+    <string name="city_phuket">Пхукет</string>
+    <string name="city_bali">Бали</string>
+    <string name="city_antalya">Анталия</string>
+    <string name="country_thailand">Тайланд</string>
+    <string name="country_indonesia">Индонезия</string>
+    <string name="country_turkey">Турция</string>
+    <string name="week_route_title">МАРШРУТ\nНЕДЕЛИ</string>
+    <string name="week_route_sub">48 ЧАСОВ В ШАНХАЕ</string>
+    <string name="week_route_list">• Башня «Жемчужина»\n• Океанариум\n• Сад Юй Юань</string>
+    <string name="open_route">ОТКРЫТЬ МАРШРУТ</string>
+    <string name="interesting_places">ИНТЕРЕСНЫЕ МЕСТА</string>
+    <string name="plan_title">СОБЕРЕМ МАРШРУТ ДЛЯ ВАС?</string>
+    <string name="plan_text">Ответьте на несколько простых вопросов и получите персональный маршрут поездки</string>
+    <string name="plan_trip">СПЛАНИРОВАТЬ ПОЕЗДКУ</string>
+
+    <string name="cities_title">ВЫБЕРИТЕ ГОРОД.\nА МЫ ПОКАЖЕМ ГЛАВНОЕ</string>
+    <string name="cities_sub">проверенные места, готовые маршруты и честные советы для поездки без лишнего поиска</string>
+    <string name="city_shanghai">Шанхай</string>
+    <string name="country_china">Китай</string>
+    <string name="city_nhatrang">Нячанг</string>
+    <string name="country_vietnam">Вьетнам</string>
+    <string name="city_hurghada">Хургада</string>
+    <string name="country_egypt">Египет</string>
+
+    <string name="weather_city">Пхукет</string>
+    <string name="weather_country">Таиланд</string>
+    <string name="weather_temp">+30°</string>
+    <string name="weather_state">Солнечно</string>
+    <string name="weather_feels_label">Ощущается</string>
+    <string name="weather_feels_value">+34°</string>
+    <string name="weather_humidity_label">Влажность</string>
+    <string name="weather_humidity_value">75%</string>
+    <string name="weather_wind_label">Ветер</string>
+    <string name="weather_wind_value">12 км/ч</string>
+
+    <string name="chip_hotels">Отели</string>
+    <string name="chip_beaches">Пляжи</string>
+    <string name="chip_restaurants">Рестораны</string>
+    <string name="chip_entertainment">Развлечения</string>
+
+    <string name="sec_main_sights">ГЛАВНЫЕ ДОСТОПРЕМЕЧАТЕЛЬНОСТИ</string>
+    <string name="sec_where_eat">ГДЕ ПОЕСТЬ?</string>
+    <string name="sec_hotels">ОТЕЛИ</string>
+    <string name="sec_beaches">ПЛЯЖИ</string>
+    <string name="see_all">все</string>
+
+    <string name="place_dinner_sky">Dinner in the sky</string>
+    <string name="place_blanket">A Blanket &amp; A Pillow</string>
+    <string name="place_siam">SIAM Phuket - Seafood Restaurant</string>
+    <string name="hotel_movenpick">Mövenpick Myth Hotel Patong Phuket ★★★★★</string>
+    <string name="hotel_royal">The Royal Paradise Hotel &amp; Spa ★★★★★</string>
+    <string name="hotel_seascape">Seascape Prestige Villa Skyline Pool Maid&amp;Chef ★★★★★</string>
+    <string name="beach_paradise">Paradise Beach</string>
+    <string name="beach_freedom">Freedom Beach</string>
+    <string name="beach_surin">Surin Beach</string>
+
+    <string name="hotels_title">Отели</string>
+    <string name="hotels_sub">Найдите идеальное место для отдыха</string>
+    <string name="filter_all">Все</string>
+    <string name="filter_rub1">₽</string>
+    <string name="filter_rub2">₽₽</string>
+    <string name="filter_rub3">₽₽₽</string>
+    <string name="h1">Residence Villa | Modern 3 Bedroom Pool Villa ★★★★★</string>
+    <string name="h2">HOMA Phuket Town ★★★★</string>
+    <string name="h3">Mövenpick Myth Hotel Patong Phuket ★★★★★</string>
+    <string name="h4">Seascape Prestige Villa Skyline Pool Maid&amp;Chef ★★★★★</string>
+    <string name="h5">The Royal Paradise Hotel &amp; Spa ★★★★★</string>
+    <string name="h6">The Coconut Nanai Resort Phuket ★★★</string>
+    <string name="h7">Himmapana Villas - Grand Valley ★★★★★</string>
+    <string name="h8">Chanalai Romantica Resort Phuket - Adult Only ★★★★</string>
+    <string name="h9">The Oceanic Sportel Phuket ★★★★★</string>
+    <string name="h10">Patong Beach Resort ★★★★★</string>
+    <string name="h11">Kata Garden Hotel ★★★★</string>
+    <string name="h12">Karon Sea View Hotel ★★★★★</string>
+    <string name="h13">Syama Mansion Patong, an Aspira Collection Resort ★★★★</string>
+    <string name="h14">Tony Resort ★★★</string>
+
+    <string name="restaurants_title">Рестораны</string>
+    <string name="restaurants_sub">Откройте для себя новые вкусы</string>
+    <string name="r1">Dinner in the sky</string>
+    <string name="r2">A Blanket &amp; A Pillow</string>
+    <string name="r3">SIAM Phuket - Seafood Restaurant</string>
+    <string name="r4">Baan Rim Pa</string>
+    <string name="r5">Kan Eang @ Pier</string>
+    <string name="r6">Raya Restaurant</string>
+    <string name="r7">Natural Restaurant</string>
+    <string name="r8">Kiang Talay Seafood</string>
+    <string name="r9">Mom Tris Kitchen</string>
+    <string name="r10">Suay Restaurant</string>
+    <string name="r11">Rock Salt Beach Club</string>
+    <string name="r12">Cherng Talay Grill</string>
+
+    <string name="beaches_title">Пляжи</string>
+    <string name="beaches_sub">Найдите свой уголок у моря</string>
+    <string name="filter_paid">Платные</string>
+    <string name="filter_free">Бесплатные</string>
+
+    <string name="b1">Paradise Beach</string>
+    <string name="b2">Freedom Beach</string>
+    <string name="b3">Surin Beach</string>
+    <string name="b4">Patong Beach</string>
+    <string name="b5">Kata Beach</string>
+    <string name="b6">Karon Beach</string>
+    <string name="b7">Nai Harn Beach</string>
+    <string name="b8">Kamala Beach</string>
+    <string name="b9">Bang Tao Beach</string>
+    <string name="b10">Ao Sane Beach</string>
+    <string name="b11">Layan Beach</string>
+    <string name="b12">Nai Yang Beach</string>
+
+    <string name="entertainment_title">Развлечения</string>
+    <string name="entertainment_sub">Впечатления и приключения на любой вкус</string>
+    <string name="filter_museums">Музеи</string>
+    <string name="filter_nature">Природа</string>
+    <string name="filter_architecture">Архитектура</string>
+    <string name="filter_kids">С детьми</string>
+    <string name="filter_excursion">Экскурсия</string>
+
+    <string name="e1">Big Buddha Phuket</string>
+    <string name="e2">Wat Chalong Temple</string>
+    <string name="e3">Phang Nga Bay Tour</string>
+    <string name="e4">Phuket Old Town Walk</string>
+    <string name="e5">Phuket Aquarium</string>
+    <string name="e6">Simon Cabaret Show</string>
+    <string name="e7">Elephant Sanctuary</string>
+    <string name="e8">Phi Phi Islands Trip</string>
+    <string name="e9">Phuket FantaSea</string>
+    <string name="e10">Kathu Waterfall</string>
+    <string name="e11">Promthep Cape</string>
+    <string name="e12">Thai Cooking Class</string>
+
+    <string name="profile_name">Ирина Иванова</string>
+    <string name="profile_email">irina@example.com</string>
+    <string name="profile_saved">Сохраненные места</string>
+    <string name="profile_settings">Настройки</string>
+
+    <string name="saved_title">Избранное</string>
+    <string name="saved_sub">Все ваши сохраненные места в одном разделе</string>
+    <string name="filter_saved_hotels">Отели</string>
+    <string name="filter_saved_restaurants">Рестораны</string>
+    <string name="filter_saved_places">Места</string>
+    <string name="filter_saved_routes">Мои маршруты</string>
+
+    <string name="plan1_title">ДАВАЙТЕ СОБЕРЕМ\nВАШ ИДЕАЛЬНЫЙ ОТПУСК</string>
+    <string name="plan1_sub">ответьте на несколько простых вопросов</string>
+
+    <string name="plan2_question">ЧТО ВАМ НРАВИТСЯ?</string>
+    <string name="plan2_hint">можно выбрать несколько вариантов</string>
+    <string name="opt_active">активный отдых</string>
+    <string name="opt_architecture">архитектура</string>
+    <string name="opt_nature">природа</string>
+    <string name="opt_beach">пляжный отдых</string>
+    <string name="opt_entertainment">развлечения</string>
+    <string name="opt_museums">музеи</string>
+    <string name="btn_continue">продолжить</string>
+
+    <string name="plan3_budget">ВАШ БЮДЖЕТ НА ДЕНЬ</string>
+    <string name="plan3_days">КОЛИЧЕСТВО ДНЕЙ ОТПУСКА</string>
+    <string name="btn_build_route">собрать мой маршрут</string>
+
+    <string name="route_title">ВАШ МАРШРУТ ГОТОВ</string>
+    <string name="route_sub">Мы учли ваши предпочтения\nи собрали идеальный план поездки</string>
+    <string name="route_info">2 дня • 10 мест</string>
+    <string name="btn_open_route">открыть маршрут</string>
+    <string name="route_again">не то? собрать заново</string>
+
+    <string name="route_day1">день первый</string>
+    <string name="route_day2">день второй</string>
+    <string name="open_place">открыть место →</string>
+    <string name="btn_save_route">Сохранить маршрут</string>
+
+    <string name="time_1">9:00</string>
+    <string name="time_2">12:00</string>
+    <string name="time_3">16:00</string>
+    <string name="time_4">21:00</string>
+
+    <string name="place_1">Phuket Big Buddha</string>
+    <string name="place_1_desc">Большой Будда Пхукета или Великий Будда Пхукета, статуя Маравии Будды на Пхукете</string>
+    <string name="place_2">Wat Chalong Temple</string>
+    <string name="place_2_desc">Самый известный буддийский храм острова с золотыми пагодами и яркими росписями</string>
+    <string name="place_3">Karon Viewpoint</string>
+    <string name="place_3_desc">Смотровая площадка с видом на три пляжа: Ката-Ной, Ката и Карон</string>
+    <string name="place_4">Promthep Cape</string>
+    <string name="place_4_desc">Мыс на юге острова, лучшее место для встречи заката</string>
+
+</resources>

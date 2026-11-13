@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityRouteMap">
+
+    <!-- Карта + раскрывающаяся плашка -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Карта (позже сюда подставится динамическая карта от бэкенда) -->
+        <ImageView
+            android:id="@+id/mapImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/phuket_map"
+            android:importantForAccessibility="no" />
+
+        <!-- Плашка -->
+        <FrameLayout
+            android:id="@+id/bottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="140dp"
+            app:behavior_hideable="false"
+            app:behavior_peekHeight="96dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_login"
+                app:shapeAppearanceOverlay="@style/RoundedTop28" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Ручка (нажатие открывает/закрывает плашку) -->
+                <FrameLayout
+                    android:id="@+id/dragHandle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+
+                    <View
+                        android:layout_width="56dp"
+                        android:layout_height="6dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_handle" />
+                </FrameLayout>
+
+                <!-- Вкладки дней -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|bottom"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="32dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DayTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/route_day1" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#3F4B5E" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DayTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.6"
+                            android:text="@string/route_day2" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#A0A8B0" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Список маршрута (прокручивается) -->
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/bg_outline_white"
+                            android:orientation="vertical"
+                            android:padding="14dp">
+
+                            <!-- Место 1 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/TimelineTime"
+                                    android:layout_width="52dp"
+                                    android:layout_height="36dp"
+                                    android:text="@string/time_1" />
+
+                                <LinearLayout
+                                    android:layout_width="36dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TimelineDot"
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:text="1" />
+
+                                    <View
+                                        android:layout_width="2dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:background="#A8D8F0" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    style="@style/PlaceCard"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/PlaceTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/place_1" />
+
+                                    <TextView
+                                        style="@style/PlaceDesc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/place_1_desc" />
+
+                                    <TextView
+                                        style="@style/PlaceButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_marginTop="10dp"
+                                        android:text="@string/open_place" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Место 2 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/TimelineTime"
+                                    android:layout_width="52dp"
+                                    android:layout_height="36dp"
+                                    android:text="@string/time_2" />
+
+                                <LinearLayout
+                                    android:layout_width="36dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TimelineDot"
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:text="2" />
+
+                                    <View
+                                        android:layout_width="2dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:background="#A8D8F0" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    style="@style/PlaceCard"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/PlaceTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/place_2" />
+
+                                    <TextView
+                                        style="@style/PlaceDesc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/place_2_desc" />
+
+                                    <TextView
+                                        style="@style/PlaceButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_marginTop="10dp"
+                                        android:text="@string/open_place" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Место 3 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/TimelineTime"
+                                    android:layout_width="52dp"
+                                    android:layout_height="36dp"
+                                    android:text="@string/time_3" />
+
+                                <LinearLayout
+                                    android:layout_width="36dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TimelineDot"
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:text="3" />
+
+                                    <View
+                                        android:layout_width="2dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:background="#A8D8F0" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    style="@style/PlaceCard"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/PlaceTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/place_3" />
+
+                                    <TextView
+                                        style="@style/PlaceDesc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/place_3_desc" />
+
+                                    <TextView
+                                        style="@style/PlaceButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_marginTop="10dp"
+                                        android:text="@string/open_place" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Место 4 (последнее, без линии вниз) -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/TimelineTime"
+                                    android:layout_width="52dp"
+                                    android:layout_height="36dp"
+                                    android:text="@string/time_4" />
+
+                                <LinearLayout
+                                    android:layout_width="36dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TimelineDot"
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:text="4" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    style="@style/PlaceCard"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        style="@style/PlaceTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/place_4" />
+
+                                    <TextView
+                                        style="@style/PlaceDesc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/place_4_desc" />
+
+                                    <TextView
+                                        style="@style/PlaceButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="end"
+                                        android:layout_marginTop="10dp"
+                                        android:text="@string/open_place" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Кнопка сохранить -->
+                        <TextView
+                            android:id="@+id/btnSaveRoute"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/bg_button_yellow_soft"
+                            android:drawablePadding="10dp"
+                            android:drawableStart="@drawable/ic_heart"
+                            android:drawableTint="#80B4F0"
+                            android:fontFamily="@font/gropled"
+                            android:gravity="center_vertical"
+                            android:paddingStart="32dp"
+                            android:paddingEnd="40dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:text="@string/btn_save_route"
+                            android:textColor="#80B4F0"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!-- Нижнее меню (активна карта) -->
+    <include
+        layout="@layout/layout_bottom_nav_map"
+        android:layout_width="match_parent"
+        android:layout_height="64dp" />
+
+</LinearLayout>

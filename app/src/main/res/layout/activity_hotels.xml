@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HotelsActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_login"
+        android:importantForAccessibility="no" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="88dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Назад + логотип -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:background="@drawable/bg_chip"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_arrow"
+                    app:tint="#FFFFFF"
+                    android:importantForAccessibility="no" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_logo"
+                    android:importantForAccessibility="no" />
+            </FrameLayout>
+
+            <!-- Плашка заголовка -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_outline_white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:src="@drawable/ic_bed"
+                    android:importantForAccessibility="no" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/buyan_bold"
+                        android:text="@string/hotels_title"
+                        android:textColor="#80B4F0"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/gilroy_medium_0"
+                        android:text="@string/hotels_sub"
+                        android:textColor="#80B4F0"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Фильтры -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_chip_active"
+                    android:text="@string/filter_all" />
+
+                <TextView
+                    style="@style/Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/filter_rub1" />
+
+                <TextView
+                    style="@style/Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/filter_rub2" />
+
+                <TextView
+                    style="@style/Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/filter_rub3" />
+            </LinearLayout>
+
+            <!-- ===== Ряд 1 ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_1" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h1" />
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_2" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h2" />
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_3" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h3" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- ===== Ряд 2 ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_3" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h4" />
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_2" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h5" />
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_1" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h6" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- ===== Ряд 3 ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_1" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h7" />
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_3" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h8" />
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_2" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h9" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- ===== Ряд 4 ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_2" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h10" />
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_3" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h11" />
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_1" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h12" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- ===== Ряд 5 (две карточки) ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal">
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_3" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h13" />
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="0dp" android:layout_height="130dp" android:layout_margin="4dp" android:layout_weight="1">
+                    <com.google.android.material.imageview.ShapeableImageView android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:src="@drawable/hotel_2" app:shapeAppearanceOverlay="@style/RoundedImage24" />
+                    <View style="@style/CardShade" android:layout_width="match_parent" android:layout_height="60dp" android:layout_gravity="bottom" />
+                    <ImageView style="@style/CardHeart" android:layout_width="26dp" android:layout_height="26dp" android:layout_gravity="top|end" android:layout_margin="6dp" app:tint="#4FD1D9" android:importantForAccessibility="no" />
+                    <TextView style="@style/CardTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom" android:layout_margin="8dp" android:text="@string/h14" />
+                </FrameLayout>
+
+                <!-- пустое место, чтобы две карточки были той же ширины, что и в других рядах -->
+                <View android:layout_width="0dp" android:layout_height="1dp" android:layout_margin="4dp" android:layout_weight="1" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/layout_bottom_nav_map"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
